@@ -1,0 +1,777 @@
+[
+    {
+      "coordinates": [24.676119, 48.797415],
+      "description": "Тисменичани, 12*5",
+      "image": "./images/тисменичани/side_a_12x5.jpg",
+      "sides": [
+        {
+          "label": "Сторона A",
+          "image": "./images/тисменичани/side_a_12x5.jpg",
+          "availability": [
+            { "month": "Січень", "status": "Free" },
+            { "month": "Лютий", "status": "Free" },
+            { "month": "Березень", "status": "Free" },
+            { "month": "Квітень", "status": "Free" },
+            { "month": "Травень", "status": "Free" },
+            { "month": "Червень", "status": "Free" },
+            { "month": "Липень", "status": "Free" },
+            { "month": "Серпень", "status": "Free" },
+            { "month": "Вересень", "status": "Free" },
+            { "month": "Жовтень", "status": "Free" },
+            { "month": "Листопад", "status": "Free" },
+            { "month": "Грудень", "status": "Free" }
+          ]
+        },
+        {
+          "label": "Сторона B",
+          "image": "./image1.jpg",
+          "availability": [
+            { "month": "Січень", "status": "Free" },
+            { "month": "Лютий", "status": "Free" },
+            { "month": "Березень", "status": "Free" },
+            { "month": "Квітень", "status": "Free" },
+            { "month": "Травень", "status": "Free" },
+            { "month": "Червень", "status": "Free" },
+            { "month": "Липень", "status": "Free" },
+            { "month": "Серпень", "status": "Free" },
+            { "month": "Вересень", "status": "Free" },
+            { "month": "Жовтень", "status": "Free" },
+            { "month": "Листопад", "status": "Free" },
+            { "month": "Грудень", "status": "Free" }
+          ]
+        }
+      ]
+    },
+    {
+      "coordinates": [24.67172, 48.78402],
+      "description": "Тисменичани, 3*6",
+      "image": "./image1.jpg",
+      "sides": [
+        {
+          "label": "Сторона A",
+          "image": "./images/тисменичани/side_a_3x6.jpg",
+          "availability": [
+            { "month": "Січень", "status": "Free" },
+            { "month": "Лютий", "status": "Free" },
+            { "month": "Березень", "status": "Free" },
+            { "month": "Квітень", "status": "Free" },
+            { "month": "Травень", "status": "Free" },
+            { "month": "Червень", "status": "Free" },
+            { "month": "Липень", "status": "Free" },
+            { "month": "Серпень", "status": "Free" },
+            { "month": "Вересень", "status": "Free" },
+            { "month": "Жовтень", "status": "Free" },
+            { "month": "Листопад", "status": "Free" },
+            { "month": "Грудень", "status": "Free" }
+          ]
+        },
+        {
+          "label": "Сторона B",
+          "image": "./image1.jpg",
+          "availability": [
+            { "month": "Січень", "status": "Free" },
+            { "month": "Лютий", "status": "Free" },
+            { "month": "Березень", "status": "Free" },
+            { "month": "Квітень", "status": "Free" },
+            { "month": "Травень", "status": "Free" },
+            { "month": "Червень", "status": "Free" },
+            { "month": "Липень", "status": "Free" },
+            { "month": "Серпень", "status": "Free" },
+            { "month": "Вересень", "status": "Free" },
+            { "month": "Жовтень", "status": "Free" },
+            { "month": "Листопад", "status": "Free" },
+            { "month": "Грудень", "status": "Free" }
+          ]
+        }
+      ]
+    },
+    {
+      "coordinates": [24.641516, 48.723222],
+      "description": "Цуцилів, 3*6",
+      "image": "./image1.jpg",
+      "sides": [
+        {
+          "label": "Side A",
+          "image": "./images/цуцилів/side_a_3x6.jpg",
+          "availability": [
+            { "month": "Січень", "status": "Free" },
+            { "month": "Лютий", "status": "Free" },
+            { "month": "Березень", "status": "Free" },
+            { "month": "Квітень", "status": "Free" },
+            { "month": "Травень", "status": "Busy" },
+            { "month": "Червень", "status": "Busy" },
+            { "month": "Липень", "status": "Busy" },
+            { "month": "Серпень", "status": "Busy" },
+            { "month": "Вересень", "status": "Free" },
+            { "month": "Жовтень", "status": "Free" },
+            { "month": "Листопад", "status": "Free" },
+            { "month": "Грудень", "status": "Free" }
+          ]
+        },
+        {
+          "label": "Side B",
+          "image": "./image1.jpg",
+          "availability": [
+            { "month": "Січень", "status": "Free" },
+            { "month": "Лютий", "status": "Free" },
+            { "month": "Березень", "status": "Free" },
+            { "month": "Квітень", "status": "Free" },
+            { "month": "Травень", "status": "Free" },
+            { "month": "Червень", "status": "Free" },
+            { "month": "Липень", "status": "Free" },
+            { "month": "Серпень", "status": "Free" },
+            { "month": "Вересень", "status": "Free" },
+            { "month": "Жовтень", "status": "Free" },
+            { "month": "Листопад", "status": "Free" },
+            { "month": "Грудень", "status": "Free" }
+          ]
+        }
+      ]
+    },
+    {
+      "coordinates": [24.61537458905247, 48.68937642875129],
+      "description": "Лісна Тарновиця, 3*6",
+      "image": "./image1.jpg",
+      "sides": [
+        {
+          "label": "Сторона A",
+          "image": "./images/лісна_тарновиця/side_a_3x6.jpg",
+          "availability": [
+            { "month": "Січень", "status": "Free" },
+            { "month": "Лютий", "status": "Free" },
+            { "month": "Березень", "status": "Free" },
+            { "month": "Квітень", "status": "Free" },
+            { "month": "Травень", "status": "Free" },
+            { "month": "Червень", "status": "Free" },
+            { "month": "Липень", "status": "Free" },
+            { "month": "Серпень", "status": "Free" },
+            { "month": "Вересень", "status": "Free" },
+            { "month": "Жовтень", "status": "Free" },
+            { "month": "Листопад", "status": "Free" },
+            { "month": "Грудень", "status": "Free" }
+          ]
+        },
+        {
+          "label": "Сторона B",
+          "image": "./image1.jpg",
+          "availability": [
+            { "month": "Січень", "status": "Free" },
+            { "month": "Лютий", "status": "Free" },
+            { "month": "Березень", "status": "Free" },
+            { "month": "Квітень", "status": "Free" },
+            { "month": "Травень", "status": "Free" },
+            { "month": "Червень", "status": "Free" },
+            { "month": "Липень", "status": "Free" },
+            { "month": "Серпень", "status": "Free" },
+            { "month": "Вересень", "status": "Free" },
+            { "month": "Жовтень", "status": "Free" },
+            { "month": "Листопад", "status": "Free" },
+            { "month": "Грудень", "status": "Free" }
+          ]
+        }
+      ]
+    },
+    {
+      "coordinates": [24.625125, 48.702525],
+      "description": "Перерісль, 3*6",
+      "image": "./image1.jpg",
+      "sides": [
+        {
+          "label": "Сторона A",
+          "image": "./images/перерісль/side_a_3x6.jpg",
+          "availability": [
+            { "month": "Січень", "status": "Free" },
+            { "month": "Лютий", "status": "Free" },
+            { "month": "Березень", "status": "Free" },
+            { "month": "Квітень", "status": "Free" },
+            { "month": "Травень", "status": "Free" },
+            { "month": "Червень", "status": "Free" },
+            { "month": "Липень", "status": "Free" },
+            { "month": "Серпень", "status": "Free" },
+            { "month": "Вересень", "status": "Free" },
+            { "month": "Жовтень", "status": "Free" },
+            { "month": "Листопад", "status": "Free" },
+            { "month": "Грудень", "status": "Free" }
+          ]
+        },
+        {
+          "label": "Сторона B",
+          "image": "./image1.jpg",
+          "availability": [
+            { "month": "Січень", "status": "Free" },
+            { "month": "Лютий", "status": "Free" },
+            { "month": "Березень", "status": "Free" },
+            { "month": "Квітень", "status": "Free" },
+            { "month": "Травень", "status": "Free" },
+            { "month": "Червень", "status": "Free" },
+            { "month": "Липень", "status": "Free" },
+            { "month": "Серпень", "status": "Free" },
+            { "month": "Вересень", "status": "Free" },
+            { "month": "Жовтень", "status": "Free" },
+            { "month": "Листопад", "status": "Free" },
+            { "month": "Грудень", "status": "Free" }
+          ]
+        }
+      ]
+    },
+    {
+      "coordinates": [24.591875, 48.645107],
+      "description": "Надвірна обїздна, 12*5",
+      "image": "./image1.jpg",
+      "sides": [
+        {
+          "label": "Сторона A",
+          "image": "./images/надвірна/side_a_12x5.jpg",
+          "availability": [
+            { "month": "Січень", "status": "Free" },
+            { "month": "Лютий", "status": "Free" },
+            { "month": "Березень", "status": "Free" },
+            { "month": "Квітень", "status": "Free" },
+            { "month": "Травень", "status": "Free" },
+            { "month": "Червень", "status": "Free" },
+            { "month": "Липень", "status": "Free" },
+            { "month": "Серпень", "status": "Free" },
+            { "month": "Вересень", "status": "Free" },
+            { "month": "Жовтень", "status": "Free" },
+            { "month": "Листопад", "status": "Free" },
+            { "month": "Грудень", "status": "Free" }
+          ]
+        },
+        {
+          "label": "Сторона B",
+          "image": "./image1.jpg",
+          "availability": [
+            { "month": "Січень", "status": "Free" },
+            { "month": "Лютий", "status": "Free" },
+            { "month": "Березень", "status": "Free" },
+            { "month": "Квітень", "status": "Free" },
+            { "month": "Травень", "status": "Free" },
+            { "month": "Червень", "status": "Free" },
+            { "month": "Липень", "status": "Free" },
+            { "month": "Серпень", "status": "Free" },
+            { "month": "Вересень", "status": "Free" },
+            { "month": "Жовтень", "status": "Free" },
+            { "month": "Листопад", "status": "Free" },
+            { "month": "Грудень", "status": "Free" }
+          ]
+        }
+      ]
+    },
+    {
+    "coordinates": [24.592578, 48.637942],
+    "description": "Надвірна обїздна, 3*6",
+    "image": "./image1.jpg",
+    "sides": [
+      {
+        "label": "Сторона A",
+        "image": "./images/надвірна/side_a_3x6.jpg",
+        "availability": [
+          { "month": "Січень", "status": "Free" },
+          { "month": "Лютий", "status": "Free" },
+          { "month": "Березень", "status": "Free" },
+          { "month": "Квітень", "status": "Free" },
+          { "month": "Травень", "status": "Free" },
+          { "month": "Червень", "status": "Free" },
+          { "month": "Липень", "status": "Free" },
+          { "month": "Серпень", "status": "Free" },
+          { "month": "Вересень", "status": "Free" },
+          { "month": "Жовтень", "status": "Free" },
+          { "month": "Листопад", "status": "Free" },
+          { "month": "Грудень", "status": "Free" }
+        ]
+      },
+      {
+        "label": "Сторона B",
+        "image": "./image1.jpg",
+        "availability": [
+          { "month": "Січень", "status": "Free" },
+          { "month": "Лютий", "status": "Free" },
+          { "month": "Березень", "status": "Free" },
+          { "month": "Квітень", "status": "Free" },
+          { "month": "Травень", "status": "Free" },
+          { "month": "Червень", "status": "Free" },
+          { "month": "Липень", "status": "Free" },
+          { "month": "Серпень", "status": "Free" },
+          { "month": "Вересень", "status": "Free" },
+          { "month": "Жовтень", "status": "Free" },
+          { "month": "Листопад", "status": "Free" },
+          { "month": "Грудень", "status": "Free" }
+        ]
+      }
+    ]
+  },
+  {
+    "coordinates": [24.591380, 48.587081],
+    "description": "Стримба, 3*6",
+    "image": "./image1.jpg",
+    "sides": [
+      {
+        "label": "Сторона A",
+        "image": "./images/стримба/side_a_3x6.jpg",
+        "availability": [
+          { "month": "Січень", "status": "Free" },
+          { "month": "Лютий", "status": "Free" },
+          { "month": "Березень", "status": "Free" },
+          { "month": "Квітень", "status": "Free" },
+          { "month": "Травень", "status": "Busy" }, 
+          { "month": "Червень", "status": "Busy" },
+          { "month": "Липень", "status": "Busy" }, 
+          { "month": "Серпень", "status": "Busy" },
+          { "month": "Вересень", "status": "Busy" },
+          { "month": "Жовтень", "status": "Busy" }, 
+          { "month": "Листопад", "status": "Busy" }, 
+          { "month": "Грудень", "status": "Busy" }  
+        ]
+      },
+      {
+        "label": "Сторона B",
+        "image": "./images/стримба/side_b_3x6.jpg",
+        "availability": [
+          { "month": "Січень", "status": "Free" },
+          { "month": "Лютий", "status": "Free" },
+          { "month": "Березень", "status": "Free" },
+          { "month": "Квітень", "status": "Free" },
+          { "month": "Травень", "status": "Free" },
+          { "month": "Червень", "status": "Free" },
+          { "month": "Липень", "status": "Free" },
+          { "month": "Серпень", "status": "Free" },
+          { "month": "Вересень", "status": "Free" },
+          { "month": "Жовтень", "status": "Free" },
+          { "month": "Листопад", "status": "Free" },
+          { "month": "Грудень", "status": "Free" }
+        ]
+      }
+    ]
+  },
+  {
+    "coordinates": [24.488454, 48.598627],
+    "description": "Пасічна, 3*6",
+    "image": "./image1.jpg",
+    "sides": [
+      {
+        "label": "Сторона A",
+        "image": "./images/пасічна/side_a_3x6.jpg",
+        "availability": [
+          { "month": "Січень", "status": "Free" },
+          { "month": "Лютий", "status": "Free" },
+          { "month": "Березень", "status": "Free" },
+          { "month": "Квітень", "status": "Free" },
+          { "month": "Травень", "status": "Busy" },
+          { "month": "Червень", "status": "Busy" },
+          { "month": "Липень", "status": "Busy" },
+          { "month": "Серпень", "status": "Busy" },
+          { "month": "Вересень", "status": "Free" },
+          { "month": "Жовтень", "status": "Free" },
+          { "month": "Листопад", "status": "Free" },
+          { "month": "Грудень", "status": "Free" }
+        ]
+      },
+      {
+        "label": "Сторона B",
+        "image": "./images/пасічна/side_b_3x6.jpg",
+        "availability": [
+          { "month": "Січень", "status": "Free" },
+          { "month": "Лютий", "status": "Free" },
+          { "month": "Березень", "status": "Free" },
+          { "month": "Квітень", "status": "Free" },
+          { "month": "Травень", "status": "Free" },
+          { "month": "Червень", "status": "Free" },
+          { "month": "Липень", "status": "Free" },
+          { "month": "Серпень", "status": "Free" },
+          { "month": "Вересень", "status": "Free" },
+          { "month": "Жовтень", "status": "Free" },
+          { "month": "Листопад", "status": "Free" },
+          { "month": "Грудень", "status": "Free" }
+        ]
+      }
+    ]
+  },
+  {
+    "coordinates": [24.391093, 48.554377],
+    "description": "Зелена, 3*6",
+    "image": "./image1.jpg",
+    "sides": [
+      {
+        "label": "Сторона A",
+        "image": "./images/зелена/side_a_3x6.jpg",
+        "availability": [
+          { "month": "Січень", "status": "Free" },
+          { "month": "Лютий", "status": "Free" },
+          { "month": "Березень", "status": "Free" },
+          { "month": "Квітень", "status": "Free" },
+          { "month": "Травень", "status": "Free" },
+          { "month": "Червень", "status": "Free" },
+          { "month": "Липень", "status": "Free" },
+          { "month": "Серпень", "status": "Free" },
+          { "month": "Вересень", "status": "Free" },
+          { "month": "Жовтень", "status": "Free" },
+          { "month": "Листопад", "status": "Free" },
+          { "month": "Грудень", "status": "Free" }
+        ]
+      },
+      {
+        "label": "Сторона B",
+        "image": "./images/зелена/side_b_3x6.jpg",
+        "availability": [
+          { "month": "Січень", "status": "Free" },
+          { "month": "Лютий", "status": "Free" },
+          { "month": "Березень", "status": "Free" },
+          { "month": "Квітень", "status": "Free" },
+          { "month": "Травень", "status": "Free" },
+          { "month": "Червень", "status": "Free" },
+          { "month": "Липень", "status": "Free" },
+          { "month": "Серпень", "status": "Free" },
+          { "month": "Вересень", "status": "Free" },
+          { "month": "Жовтень", "status": "Free" },
+          { "month": "Листопад", "status": "Free" },
+          { "month": "Грудень", "status": "Free" }
+        ]
+      }
+    ]
+  },
+  {
+    "coordinates": [24.463440, 48.633465],
+    "description": "Битків, 3*6",
+    "image": "./image1.jpg",
+    "sides": [
+      {
+        "label": "Cторона A",
+        "image": "./images/битків/side_a_3x6.jpg",
+        "availability": [
+          { "month": "Січень", "status": "Free" },
+          { "month": "Лютий", "status": "Free" },
+          { "month": "Березень", "status": "Free" },
+          { "month": "Квітень", "status": "Free" },
+          { "month": "Травень", "status": "Free" },
+          { "month": "Червень", "status": "Free" },
+          { "month": "Липень", "status": "Free" },
+          { "month": "Серпень", "status": "Free" },
+          { "month": "Вересень", "status": "Free" },
+          { "month": "Жовтень", "status": "Free" },
+          { "month": "Листопад", "status": "Free" },
+          { "month": "Грудень", "status": "Free" }
+        ]
+      },
+      {
+        "label": "Сторона B",
+        "image": "./images/битків/side_b_3x6.jpg",
+        "availability": [
+          { "month": "Січень", "status": "Free" },
+          { "month": "Лютий", "status": "Free" },
+          { "month": "Березень", "status": "Free" },
+          { "month": "Квітень", "status": "Free" },
+          { "month": "Травень", "status": "Free" },
+          { "month": "Червень", "status": "Free" },
+          { "month": "Липень", "status": "Free" },
+          { "month": "Серпень", "status": "Free" },
+          { "month": "Вересень", "status": "Free" },
+          { "month": "Жовтень", "status": "Free" },
+          { "month": "Листопад", "status": "Free" },
+          { "month": "Грудень", "status": "Free" }
+        ]
+      }
+    ]
+  },
+  {
+    "coordinates": [24.518454, 48.611361],
+    "description": "Пнів, 3*6",
+    "image": "./image1.jpg",
+    "sides": [
+      {
+        "label": "Сторона A",
+        "image": "./images/пнів/side_a_3x6.jpg",
+        "availability": [
+          { "month": "Січень", "status": "Free" },
+          { "month": "Лютий", "status": "Free" },
+          { "month": "Березень", "status": "Free" },
+          { "month": "Квітень", "status": "Free" },
+          { "month": "Травень", "status": "Busy" },  
+          { "month": "Червень", "status": "Busy" },
+          { "month": "Липень", "status": "Busy" },
+          { "month": "Серпень", "status": "Busy" },
+          { "month": "Вересень", "status": "Free" },
+          { "month": "Жовтень", "status": "Free" },
+          { "month": "Листопад", "status": "Free" },
+          { "month": "Грудень", "status": "Free" }
+        ]
+      },
+      {
+        "label": "Сторона B",
+        "image": "./images/пнів/side_b_3x6.jpg",
+        "availability": [
+          { "month": "Січень", "status": "Free" },
+          { "month": "Лютий", "status": "Free" },
+          { "month": "Березень", "status": "Free" },
+          { "month": "Квітень", "status": "Free" },
+          { "month": "Травень", "status": "Busy" },
+          { "month": "Червень", "status": "Busy" },
+          { "month": "Липень", "status": "Busy" }, 
+          { "month": "Серпень", "status": "Busy" },
+          { "month": "Вересень", "status": "Free" },
+          { "month": "Жовтень", "status": "Free" },
+          { "month": "Листопад", "status": "Free" },
+          { "month": "Грудень", "status": "Free" }
+        ]
+      }
+    ]
+  },
+  {
+    "coordinates": [24.569760, 48.665862],
+    "description": "Мирне, 3*6",
+    "image": "./image1.jpg",
+    "sides": [
+      {
+        "label": "Сторона A",
+        "image": "./images/мирне/side_a_3x6.jpg",
+        "availability": [
+          { "month": "Січень", "status": "Free" },
+          { "month": "Лютий", "status": "Free" },
+          { "month": "Березень", "status": "Free" },
+          { "month": "Квітень", "status": "Free" },
+          { "month": "Травень", "status": "Free" },
+          { "month": "Червень", "status": "Free" },
+          { "month": "Липень", "status": "Free" },
+          { "month": "Серпень", "status": "Free" },
+          { "month": "Вересень", "status": "Free" },
+          { "month": "Жовтень", "status": "Free" },
+          { "month": "Листопад", "status": "Free" },
+          { "month": "Грудень", "status": "Free" }
+        ]
+      },
+      {
+        "label": "Сторона B",
+        "image": "./images/мирне/side_b_3x6.jpg",
+        "availability": [
+          { "month": "Січень", "status": "Free" },
+          { "month": "Лютий", "status": "Free" },
+          { "month": "Березень", "status": "Free" },
+          { "month": "Квітень", "status": "Free" },
+          { "month": "Травень", "status": "Free" },
+          { "month": "Червень", "status": "Free" },
+          { "month": "Липень", "status": "Free" },
+          { "month": "Серпень", "status": "Free" },
+          { "month": "Вересень", "status": "Free" },
+          { "month": "Жовтень", "status": "Free" },
+          { "month": "Листопад", "status": "Free" },
+          { "month": "Грудень", "status": "Free" }
+        ]
+      }
+    ]
+  },
+  {
+    "coordinates": [24.557733, 48.679556],
+    "description": "Гвізд, 3*6",
+    "image": "./image1.jpg",
+    "sides": [
+      {
+        "label": "Сторона A",
+        "image": "./images/гвізд/side_a_3x6.jpg",
+        "availability": [
+          { "month": "Січень", "status": "Free" },
+          { "month": "Лютий", "status": "Free" },
+          { "month": "Березень", "status": "Free" },
+          { "month": "Квітень", "status": "Free" },
+          { "month": "Травень", "status": "Free" },
+          { "month": "Червень", "status": "Free" },
+          { "month": "Липень", "status": "Free" },
+          { "month": "Серпень", "status": "Free" },
+          { "month": "Вересень", "status": "Free" },
+          { "month": "Жовтень", "status": "Free" },
+          { "month": "Листопад", "status": "Free" },
+          { "month": "Грудень", "status": "Free" }
+        ]
+      },
+      {
+        "label": "Сторона B",
+        "image": "./images/гвізд/side_b_3x6.jpg",
+        "availability": [
+          { "month": "Січень", "status": "Free" },
+          { "month": "Лютий", "status": "Free" },
+          { "month": "Березень", "status": "Free" },
+          { "month": "Квітень", "status": "Free" },
+          { "month": "Травень", "status": "Free" },
+          { "month": "Червень", "status": "Free" },
+          { "month": "Липень", "status": "Free" },
+          { "month": "Серпень", "status": "Free" },
+          { "month": "Вересень", "status": "Free" },
+          { "month": "Жовтень", "status": "Free" },
+          { "month": "Листопад", "status": "Free" },
+          { "month": "Грудень", "status": "Free" }
+        ]
+      }
+    ]
+  },
+  {
+    "coordinates": [24.537439, 48.701514],
+    "description": "Старуння, 3*6",
+    "image": "./image1.jpg",
+    "sides": [
+      {
+        "label": "Сторона A",
+        "image": "./images/старуння/side_a_3x6.jpg",
+        "availability": [
+          { "month": "Січень", "status": "Free" },
+          { "month": "Лютий", "status": "Free" },
+          { "month": "Березень", "status": "Free" },
+          { "month": "Квітень", "status": "Free" },
+          { "month": "Травень", "status": "Free" },
+          { "month": "Червень", "status": "Free" },
+          { "month": "Липень", "status": "Free" },
+          { "month": "Серпень", "status": "Free" },
+          { "month": "Вересень", "status": "Free" },
+          { "month": "Жовтень", "status": "Free" },
+          { "month": "Листопад", "status": "Free" },
+          { "month": "Грудень", "status": "Free" }
+        ]
+      },
+      {
+        "label": "Сторона B",
+        "image": "./images/старуння/side_b_3x6.jpg",
+        "availability": [
+          { "month": "Січень", "status": "Free" },
+          { "month": "Лютий", "status": "Free" },
+          { "month": "Березень", "status": "Free" },
+          { "month": "Квітень", "status": "Free" },
+          { "month": "Травень", "status": "Free" },
+          { "month": "Червень", "status": "Free" },
+          { "month": "Липень", "status": "Free" },
+          { "month": "Серпень", "status": "Free" },
+          { "month": "Вересень", "status": "Free" },
+          { "month": "Жовтень", "status": "Free" },
+          { "month": "Листопад", "status": "Free" },
+          { "month": "Грудень", "status": "Free" }
+        ]
+      }
+    ]
+  },
+  {
+    "coordinates": [24.524449, 48.790010],
+    "description": "Богородчани, 3*6",
+    "image": "./image1.jpg",
+    "sides": [
+      {
+        "label": "Сторона A",
+        "image": "./images/богородчани/side_a_3x6.jpg",
+        "availability": [
+          { "month": "Січень", "status": "Free" },
+          { "month": "Лютий", "status": "Free" },
+          { "month": "Березень", "status": "Free" },
+          { "month": "Квітень", "status": "Free" },
+          { "month": "Травень", "status": "Free" },
+          { "month": "Червень", "status": "Free" },
+          { "month": "Липень", "status": "Free" },
+          { "month": "Серпень", "status": "Free" },
+          { "month": "Вересень", "status": "Free" },
+          { "month": "Жовтень", "status": "Free" },
+          { "month": "Листопад", "status": "Free" },
+          { "month": "Грудень", "status": "Free" }
+        ]
+      },
+      {
+        "label": "Сторона B",
+        "image": "./images/богородчани/side_b_3x6.jpg",
+        "availability": [
+          { "month": "Січень", "status": "Free" },
+          { "month": "Лютий", "status": "Free" },
+          { "month": "Березень", "status": "Free" },
+          { "month": "Квітень", "status": "Free" },
+          { "month": "Травень", "status": "Free" },
+          { "month": "Червень", "status": "Free" },
+          { "month": "Липень", "status": "Free" },
+          { "month": "Серпень", "status": "Free" },
+          { "month": "Вересень", "status": "Free" },
+          { "month": "Жовтень", "status": "Free" },
+          { "month": "Листопад", "status": "Free" },
+          { "month": "Грудень", "status": "Free" }
+        ]
+      }
+    ]
+  },
+  {
+    "coordinates": [24.647464, 48.878571],
+    "description": "Драгомерчани, 3*6",
+    "image": "./image1.jpg",
+    "sides": [
+      {
+        "label": "Сторона A",
+        "image": "./images/драгомерчани/side_a_3x6.jpg",
+        "availability": [
+          { "month": "Січень", "status": "Free" },
+          { "month": "Лютий", "status": "Free" },
+          { "month": "Березень", "status": "Free" },
+          { "month": "Квітень", "status": "Free" },
+          { "month": "Травень", "status": "Free" },
+          { "month": "Червень", "status": "Free" },
+          { "month": "Липень", "status": "Free" },
+          { "month": "Серпень", "status": "Free" },
+          { "month": "Вересень", "status": "Free" },
+          { "month": "Жовтень", "status": "Free" },
+          { "month": "Листопад", "status": "Free" },
+          { "month": "Грудень", "status": "Free" }
+        ]
+      },
+      {
+        "label": "Сторона B",
+        "image": "./images/драгомерчани/side_b_3x6.jpg",
+        "availability": [
+          { "month": "Січень", "status": "Free" },
+          { "month": "Лютий", "status": "Free" },
+          { "month": "Березень", "status": "Free" },
+          { "month": "Квітень", "status": "Free" },
+          { "month": "Травень", "status": "Free" },
+          { "month": "Червень", "status": "Free" },
+          { "month": "Липень", "status": "Free" },
+          { "month": "Серпень", "status": "Free" },
+          { "month": "Вересень", "status": "Free" },
+          { "month": "Жовтень", "status": "Free" },
+          { "month": "Листопад", "status": "Free" },
+          { "month": "Грудень", "status": "Free" }
+        ]
+      }
+    ]
+  },
+    {
+        "description": "Ворохта, 3*6",
+        "coordinates": [24.558623, 48.281601],
+        "image": "./image1.jpg",
+        "sides": [
+          {
+            "label": "Сторона A",
+            "image": "./image1.jpg",
+            "availability": [
+              { "month": "January", "status": "Busy" },
+              { "month": "February", "status": "Busy" },
+              { "month": "March", "status": "Busy" },
+              { "month": "April", "status": "Busy" },
+              { "month": "May", "status": "Busy" },
+              { "month": "June", "status": "Busy" },
+              { "month": "July", "status": "Busy" },
+              { "month": "August", "status": "Busy" },
+              { "month": "September", "status": "Busy" },
+              { "month": "October", "status": "Busy" },
+              { "month": "November", "status": "Busy" },
+              { "month": "December", "status": "Busy" }
+            ]
+          },
+          {
+            "label": "Сторона B",
+            "image": "./image1.jpg",
+            "availability": [
+              { "month": "January", "status": "Busy" },
+              { "month": "February", "status": "Busy" },
+              { "month": "March", "status": "Busy" },
+              { "month": "April", "status": "Busy" },
+              { "month": "May", "status": "Busy" },
+              { "month": "June", "status": "Busy" },
+              { "month": "July", "status": "Busy" },
+              { "month": "August", "status": "Busy" },
+              { "month": "September", "status": "Busy" },
+              { "month": "October", "status": "Busy" },
+              { "month": "November", "status": "Busy" },
+              { "month": "December", "status": "Busy" }
+            ]
+          }
+        ]
+      }
+  ]
+  

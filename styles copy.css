@@ -1,0 +1,231 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 1rem;
+  }
+  
+  header h1 {
+    color: #fff;
+    margin: 0;
+  }
+  
+  header nav a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  header nav a:hover {
+    text-decoration: underline;
+  }
+  
+  #map {
+    width: 100%;
+    height: 80vh;
+  }
+  
+  footer {
+    background-color: #f5f5f5;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .popup {
+    max-width: 300px;
+  }
+  
+  .popup img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  
+  .popup table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+  }
+  
+  .popup th,
+  .popup td {
+    border-bottom: 1px solid #ccc;
+    padding: 0.25rem 0;
+  }
+  
+  .popup th {
+    font-weight: bold;
+  }
+
+  .side-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .side {
+    width: 48%;
+  }
+  
+  .side img {
+    margin-bottom: 1rem;
+  }
+  
+  .side table {
+    width: 100%;
+  }
+  
+  
+  .availability {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-top: 1rem;
+  }
+  
+  .month {
+    width: 25%;
+    padding: 0.25rem;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 4px;
+  }
+  
+  .free {
+    background-color: green;
+    color: white;
+  }
+  
+  .busy {
+    background-color: red;
+    color: white;
+  }
+  
+  #billboard-list h3 {
+    margin-top: 0;
+  }
+  
+  #billboard-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #billboard-list li {
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+  
+  #billboard-list li:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  
+.content {
+  display: flex;
+  background-color: none; /* Change this line */
+}
+
+  
+ /* Add background color to the map div */
+#map {
+    flex-grow: 1;
+    background-color: #fff; /* Add this line */
+  }
+
+  #billboard-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 250px;
+    max-height: 100%;
+    padding: 1rem;
+    overflow-y: auto;
+    background-color: rgba(255, 255, 255, 0.7); /* Adjust the transparency value here */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Add these styles to improve the design */
+#billboard-list h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  #billboard-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #billboard-list li {
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  #billboard-list li:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+
+  #map {
+    flex-grow: 1;
+    background-color: #fff; /* Add this line */
+  }
+
+/* Update these styles */
+#toggle-billboard-list {
+    position: absolute;
+    top: 1rem;
+    left: 250px; /* Move the button to the right edge of the billboard list */
+    z-index: 2;
+    width: 40px; /* Set the width */
+    height: 40px; /* Set the height */
+    padding: 0; /* Remove padding */
+    font-size: 1.2rem; /* Increase font size */
+    line-height: 40px; /* Set the line height to center the text vertically */
+    text-align: center; /* Center the text horizontally */
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    outline: none;
+  }
+  
+  .custom-marker {
+    background-image: url('./billboard.svg');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .mapboxgl-popup {
+    max-width: 400px;
+  }
+  
+  .mapboxgl-popup-content {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .sides-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .side-container {
+    width: 65%; /* You may need to adjust this value */
+  }

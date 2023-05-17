@@ -1,0 +1,16 @@
+{
+  "name": "billboards",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script copy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "lightbox2": "^2.11.4"
+  }
+}
