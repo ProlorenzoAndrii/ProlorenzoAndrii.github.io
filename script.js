@@ -32,7 +32,7 @@ fetch('billboards.json')
 
     billboards.forEach((billboard) => {
       let popupContent = `<h3>${billboard.description}</h3>`;
-      popupContent += `<p>Координати: ${billboard.coordinates[1]}, ${billboard.coordinates[0]}</p>`;
+      popupContent += `<p>Координати: <a href="https://www.google.com/maps/?q=${billboard.coordinates[1]},${billboard.coordinates[0]}" target="_blank">${billboard.coordinates[1]}, ${billboard.coordinates[0]}</a></p>`;
       popupContent += '<div class="sides-wrapper">';
 
       billboard.sides.forEach((side) => {
