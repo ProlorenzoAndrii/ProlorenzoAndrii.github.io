@@ -230,11 +230,11 @@
             { "month": "Травень", "status": "Free" },
             { "month": "Червень", "status": "Free" },
             { "month": "Липень", "status": "Free" },
-            { "month": "Серпень", "status": "Free" },
-            { "month": "Вересень", "status": "Free" },
-            { "month": "Жовтень", "status": "Free" },
-            { "month": "Листопад", "status": "Free" },
-            { "month": "Грудень", "status": "Free" }
+            { "month": "Серпень", "status": "Busy" },
+            { "month": "Вересень", "status": "Busy" },
+            { "month": "Жовтень", "status": "Busy" },
+            { "month": "Листопад", "status": "Busy" },
+            { "month": "Грудень", "status": "Busy" }
           ]
         },
         {
@@ -463,11 +463,11 @@
           { "month": "Травень", "status": "Free" },
           { "month": "Червень", "status": "Free" },
           { "month": "Липень", "status": "Free" },
-          { "month": "Серпень", "status": "Free" },
-          { "month": "Вересень", "status": "Free" },
-          { "month": "Жовтень", "status": "Free" },
-          { "month": "Листопад", "status": "Free" },
-          { "month": "Грудень", "status": "Free" }
+          { "month": "Серпень", "status": "Busy" },
+          { "month": "Вересень", "status": "Busy" },
+          { "month": "Жовтень", "status": "Busy" },
+          { "month": "Листопад", "status": "Busy" },
+          { "month": "Грудень", "status": "Busy" }
         ]
       }
     ]
@@ -549,11 +549,11 @@
           { "month": "Травень", "status": "Free" },
           { "month": "Червень", "status": "Free" },
           { "month": "Липень", "status": "Free" },
-          { "month": "Серпень", "status": "Free" },
-          { "month": "Вересень", "status": "Free" },
-          { "month": "Жовтень", "status": "Free" },
-          { "month": "Листопад", "status": "Free" },
-          { "month": "Грудень", "status": "Free" }
+          { "month": "Серпень", "status": "Busy" },
+          { "month": "Вересень", "status": "Busy" },
+          { "month": "Жовтень", "status": "Busy" },
+          { "month": "Листопад", "status": "Busy" },
+          { "month": "Грудень", "status": "Busy" }
         ]
       }
     ]
@@ -574,11 +574,11 @@
           { "month": "Травень", "status": "Free" },
           { "month": "Червень", "status": "Free" },
           { "month": "Липень", "status": "Free" },
-          { "month": "Серпень", "status": "Free" },
-          { "month": "Вересень", "status": "Free" },
-          { "month": "Жовтень", "status": "Free" },
-          { "month": "Листопад", "status": "Free" },
-          { "month": "Грудень", "status": "Free" }
+          { "month": "Серпень", "status": "Busy" },
+          { "month": "Вересень", "status": "Busy" },
+          { "month": "Жовтень", "status": "Busy" },
+          { "month": "Листопад", "status": "Busy" },
+          { "month": "Грудень", "status": "Busy" }
         ]
       },
       {
@@ -592,11 +592,11 @@
           { "month": "Травень", "status": "Free" },
           { "month": "Червень", "status": "Free" },
           { "month": "Липень", "status": "Free" },
-          { "month": "Серпень", "status": "Free" },
-          { "month": "Вересень", "status": "Free" },
-          { "month": "Жовтень", "status": "Free" },
-          { "month": "Листопад", "status": "Free" },
-          { "month": "Грудень", "status": "Free" }
+          { "month": "Серпень", "status": "Busy" },
+          { "month": "Вересень", "status": "Busy" },
+          { "month": "Жовтень", "status": "Busy" },
+          { "month": "Листопад", "status": "Busy" },
+          { "month": "Грудень", "status": "Busy" }
         ]
       }
     ]
