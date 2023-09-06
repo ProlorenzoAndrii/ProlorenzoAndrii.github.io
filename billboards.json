@@ -301,7 +301,7 @@
     ]
   },
   {
-    "coordinates": [24.59138, 48.587081],
+    "coordinates": [24.591659, 48.587130],
     "description": "Стримба, 3*6",
     "image": "./image1.jpg",
     "sides": [
@@ -516,7 +516,7 @@
     ]
   },
   {
-    "coordinates": [24.569760, 48.665862],
+    "coordinates": [24.569919, 48.666248],
     "description": "Мирне, 3*6",
     "image": "./image1.jpg",
     "sides": [
@@ -559,7 +559,7 @@
     ]
   },
   {
-    "coordinates": [24.557733, 48.679556],
+    "coordinates": [24.557589, 48.679792],
     "description": "Гвізд, 3*6",
     "image": "./image1.jpg",
     "sides": [
