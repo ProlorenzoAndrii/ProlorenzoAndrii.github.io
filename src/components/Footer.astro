@@ -1,0 +1,56 @@
+---
+---
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p class="footer-brand">Політорг-ІВ</p>
+    <p class="footer-contact">
+      <a href="tel:+380951327415">+38 (095) 132-74-15</a>
+    </p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-header);
+    background: linear-gradient(to top, rgba(26, 26, 46, 0.92), rgba(26, 26, 46, 0.78));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 0.6rem 1.5rem;
+  }
+
+  .footer-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-brand {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .footer-contact a {
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+    font-size: 0.85rem;
+  }
+
+  .footer-contact a:hover {
+    color: #fff;
+  }
+
+  @media (max-width: 520px) {
+    .footer {
+      padding: 0.5rem 1rem;
+    }
+  }
+</style>

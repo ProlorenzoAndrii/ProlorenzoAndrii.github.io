@@ -1,0 +1,494 @@
+---
+import billboards from '../data/billboards.json';
+
+const totalBillboards = billboards.length;
+const locations = new Set(billboards.map(b => b.description.split(',')[0].trim())).size;
+---
+
+<section id="hero" class="hero">
+  <div class="hero-particles" aria-hidden="true">
+    <span class="particle" style="--x: 15%; --y: 20%; --size: 3px; --dur: 6s; --del: 0s"></span>
+    <span class="particle" style="--x: 80%; --y: 35%; --size: 2px; --dur: 8s; --del: 1s"></span>
+    <span class="particle" style="--x: 40%; --y: 70%; --size: 4px; --dur: 7s; --del: 2s"></span>
+    <span class="particle" style="--x: 70%; --y: 15%; --size: 2px; --dur: 9s; --del: 0.5s"></span>
+    <span class="particle" style="--x: 25%; --y: 85%; --size: 3px; --dur: 6.5s; --del: 3s"></span>
+    <span class="particle" style="--x: 90%; --y: 60%; --size: 2px; --dur: 7.5s; --del: 1.5s"></span>
+    <span class="particle" style="--x: 55%; --y: 10%; --size: 3px; --dur: 8.5s; --del: 2.5s"></span>
+    <span class="particle" style="--x: 10%; --y: 50%; --size: 2px; --dur: 6s; --del: 4s"></span>
+  </div>
+
+  <a href="tel:+380951327415" class="hero-phone anim-item" style="--delay: 1200ms">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </svg>
+    <span>+38 (095) 132-74-15</span>
+  </a>
+
+  <div class="hero-split">
+    <!-- LEFT: Animated billboard -->
+    <div class="hero-visual anim-item" style="--delay: 0ms">
+      <div class="billboard-scene" id="billboard-scene">
+        <div class="billboard-glow"></div>
+        <svg class="billboard-svg" viewBox="0 0 320 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Post -->
+          <rect x="148" y="250" width="24" height="140" rx="4" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+          <!-- Support beams -->
+          <line x1="120" y1="250" x2="148" y2="290" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+          <line x1="200" y1="250" x2="172" y2="290" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+          <!-- Billboard frame -->
+          <rect x="30" y="40" width="260" height="210" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+          <!-- Screen -->
+          <rect class="bb-screen" x="40" y="50" width="240" height="190" rx="4"/>
+          <!-- Screen content lines -->
+          <rect x="70" y="100" width="180" height="8" rx="4" fill="rgba(255,255,255,0.15)"/>
+          <rect x="70" y="120" width="130" height="8" rx="4" fill="rgba(255,255,255,0.1)"/>
+          <rect x="70" y="150" width="90" height="24" rx="12" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+          <!-- Top lights -->
+          <circle class="bb-light bb-light-1" cx="100" cy="38" r="4"/>
+          <circle class="bb-light bb-light-2" cx="160" cy="38" r="4"/>
+          <circle class="bb-light bb-light-3" cx="220" cy="38" r="4"/>
+        </svg>
+        <div class="billboard-shine" id="billboard-shine"></div>
+        <div class="billboard-rays"></div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Company info -->
+    <div class="hero-info">
+      <h1 class="hero-title">
+        <span class="anim-item" style="--delay: 200ms">Політорг</span><span class="anim-item hero-title-accent" style="--delay: 400ms">-ІВ</span>
+      </h1>
+
+      <p class="hero-tagline anim-item" style="--delay: 600ms">
+        Зовнішня реклама на Прикарпатті
+      </p>
+
+      <div class="hero-line anim-item" style="--delay: 700ms"></div>
+
+      <div class="hero-stats">
+        <div class="stat anim-item" style="--delay: 750ms">
+          <span class="stat-value">{totalBillboards}</span>
+          <span class="stat-label">білбордів</span>
+        </div>
+        <div class="stat-divider anim-item" style="--delay: 800ms"></div>
+        <div class="stat anim-item" style="--delay: 850ms">
+          <span class="stat-value">{locations}+</span>
+          <span class="stat-label">локацій</span>
+        </div>
+        <div class="stat-divider anim-item" style="--delay: 900ms"></div>
+        <div class="stat anim-item" style="--delay: 950ms">
+          <span class="stat-value">ІФ</span>
+          <span class="stat-label">область</span>
+        </div>
+      </div>
+
+      <a href="#map-section" class="hero-cta anim-item" style="--delay: 1100ms">
+        <span>Переглянути карту</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12" />
+          <polyline points="12 5 19 12 12 19" />
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint anim-item" style="--delay: 1400ms">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9" />
+    </svg>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(160deg, #0a0a1a 0%, #0f1f3d 40%, #0a0e1a 100%);
+    overflow: hidden;
+    scroll-snap-align: start;
+  }
+
+  /* --- Floating particles --- */
+  .hero-particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .particle {
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: var(--size);
+    height: var(--size);
+    background: rgba(100, 180, 255, 0.5);
+    border-radius: 50%;
+    animation: float-particle var(--dur) ease-in-out var(--del) infinite;
+  }
+
+  @keyframes float-particle {
+    0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
+    50% { transform: translateY(-30px) scale(1.5); opacity: 0.7; }
+  }
+
+  /* --- Phone link --- */
+  .hero-phone {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.5rem;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: color var(--transition-fast);
+  }
+
+  .hero-phone:hover {
+    color: #fff;
+  }
+
+  /* --- Split layout --- */
+  .hero-split {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: clamp(2rem, 6vw, 6rem);
+    max-width: 1100px;
+    padding: 0 2rem;
+    width: 100%;
+  }
+
+  /* --- LEFT: Billboard visual --- */
+  .hero-visual {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+  }
+
+  .billboard-scene {
+    position: relative;
+    width: 280px;
+    height: 360px;
+    perspective: 800px;
+    transition: transform 200ms ease-out;
+  }
+
+  .billboard-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 40px rgba(80, 140, 255, 0.15));
+  }
+
+  .bb-screen {
+    fill: rgba(15, 30, 60, 0.6);
+    stroke: rgba(100, 170, 255, 0.2);
+    stroke-width: 1;
+    animation: screen-pulse 4s ease-in-out infinite;
+  }
+
+  @keyframes screen-pulse {
+    0%, 100% { fill: rgba(15, 30, 60, 0.6); stroke: rgba(100, 170, 255, 0.2); }
+    50% { fill: rgba(20, 40, 80, 0.7); stroke: rgba(100, 170, 255, 0.35); }
+  }
+
+  .bb-light {
+    fill: rgba(100, 180, 255, 0.8);
+    animation: light-blink 3s ease-in-out infinite;
+  }
+
+  .bb-light-1 { animation-delay: 0s; }
+  .bb-light-2 { animation-delay: 0.4s; }
+  .bb-light-3 { animation-delay: 0.8s; }
+
+  @keyframes light-blink {
+    0%, 100% { fill: rgba(100, 180, 255, 0.6); filter: drop-shadow(0 0 4px rgba(100, 180, 255, 0.4)); }
+    50% { fill: rgba(150, 210, 255, 1); filter: drop-shadow(0 0 12px rgba(100, 180, 255, 0.9)); }
+  }
+
+  .billboard-glow {
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    width: 80%;
+    height: 55%;
+    background: radial-gradient(ellipse, rgba(60, 120, 255, 0.12) 0%, transparent 70%);
+    filter: blur(20px);
+    animation: glow-breathe 4s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes glow-breathe {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+  }
+
+  .billboard-shine {
+    position: absolute;
+    top: 12%;
+    left: 12%;
+    width: 76%;
+    height: 50%;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 300ms ease;
+    pointer-events: none;
+    background: radial-gradient(
+      circle 120px at var(--mx, 50%) var(--my, 50%),
+      rgba(150, 200, 255, 0.25) 0%,
+      transparent 100%
+    );
+  }
+
+  .billboard-scene:hover .billboard-shine {
+    opacity: 1;
+  }
+
+  .billboard-rays {
+    position: absolute;
+    top: 5%;
+    left: 15%;
+    width: 70%;
+    height: 10%;
+    background: conic-gradient(
+      from 180deg at 50% 100%,
+      transparent 30%,
+      rgba(100, 170, 255, 0.06) 40%,
+      rgba(100, 170, 255, 0.1) 50%,
+      rgba(100, 170, 255, 0.06) 60%,
+      transparent 70%
+    );
+    filter: blur(4px);
+    animation: rays-sway 6s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes rays-sway {
+    0%, 100% { transform: scaleX(1) translateY(0); opacity: 0.6; }
+    50% { transform: scaleX(1.15) translateY(-4px); opacity: 1; }
+  }
+
+  /* --- RIGHT: Info --- */
+  .hero-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    min-width: 0;
+  }
+
+  .hero-title {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    color: #fff;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+
+  .hero-title-accent {
+    color: rgba(100, 170, 255, 0.5);
+  }
+
+  .hero-tagline {
+    font-size: clamp(0.9rem, 2vw, 1.15rem);
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-line {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(100, 170, 255, 0.6), transparent);
+    border-radius: 1px;
+  }
+
+  .hero-stats {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 0.25rem;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .stat-value {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.68rem;
+    color: rgba(255, 255, 255, 0.35);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+  }
+
+  .stat-divider {
+    width: 1px;
+    height: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 0.75rem;
+    padding: 0.8rem 1.8rem;
+    background: rgba(100, 170, 255, 0.12);
+    border: 1px solid rgba(100, 170, 255, 0.25);
+    color: rgba(200, 220, 255, 0.95);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: var(--radius-full);
+    transition: background 200ms ease, border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+    letter-spacing: -0.01em;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(100, 170, 255, 0.1) 50%, transparent 100%);
+    transform: translateX(-100%);
+    transition: transform 500ms ease;
+  }
+
+  .hero-cta:hover {
+    background: rgba(100, 170, 255, 0.2);
+    border-color: rgba(100, 170, 255, 0.45);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(60, 120, 255, 0.2);
+  }
+
+  .hero-cta:hover::before {
+    transform: translateX(100%);
+  }
+
+  /* --- Scroll hint --- */
+  .hero-scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    color: rgba(255, 255, 255, 0.25);
+    animation: reveal-up 600ms cubic-bezier(0.16, 1, 0.3, 1) forwards,
+               bounce-hint 2s ease-in-out 2s infinite;
+    animation-delay: var(--delay), 2s;
+    opacity: 0;
+  }
+
+  /* --- Animation utilities --- */
+  .anim-item {
+    opacity: 0;
+    animation: reveal-up 600ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: var(--delay);
+  }
+
+  @keyframes reveal-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes bounce-hint {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+  }
+
+  /* --- Mobile --- */
+  @media (max-width: 768px) {
+    .hero-split {
+      flex-direction: column;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .hero-info {
+      align-items: center;
+    }
+
+    .hero-visual {
+      max-width: 220px;
+    }
+
+    .billboard-scene {
+      width: 200px;
+      height: 260px;
+    }
+
+    .hero-line {
+      margin: 0 auto;
+    }
+
+    .hero-stats {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .hero-phone span {
+      display: none;
+    }
+
+    .hero-stats {
+      gap: 1rem;
+    }
+
+    .stat-value {
+      font-size: 1.25rem;
+    }
+
+    .hero-visual {
+      max-width: 180px;
+    }
+
+    .billboard-scene {
+      width: 160px;
+      height: 210px;
+    }
+  }
+</style>
+
+<script>
+  const scene = document.getElementById('billboard-scene');
+  const shine = document.getElementById('billboard-shine');
+
+  if (scene && shine) {
+    scene.addEventListener('mousemove', (e) => {
+      const rect = scene.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+      shine.style.setProperty('--mx', `${x}%`);
+      shine.style.setProperty('--my', `${y}%`);
+
+      const rotY = ((x - 50) / 50) * 6;
+      const rotX = ((y - 50) / 50) * -4;
+      scene.style.transform = `rotateY(${rotY}deg) rotateX(${rotX}deg)`;
+    });
+
+    scene.addEventListener('mouseleave', () => {
+      scene.style.transform = 'rotateY(0deg) rotateX(0deg)';
+    });
+  }
+</script>

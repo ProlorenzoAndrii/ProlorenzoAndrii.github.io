@@ -1,0 +1,327 @@
+---
+import billboards from '../data/billboards.json';
+---
+
+<div id="panel-backdrop" class="panel-backdrop"></div>
+
+<aside id="billboard-panel" class="panel panel-dark" aria-label="Список білбордів">
+  <div class="panel-drag-handle" aria-hidden="true"><span></span></div>
+
+  <div class="panel-header">
+    <div class="panel-header-left">
+      <h2 class="panel-title">Білборди</h2>
+      <span class="panel-count">{billboards.length}</span>
+    </div>
+    <button id="panel-close-btn" class="panel-close" aria-label="Закрити список">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
+    </button>
+  </div>
+
+  <div class="panel-search">
+    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8" />
+      <line x1="21" y1="21" x2="16.65" y2="16.65" />
+    </svg>
+    <input
+      type="text"
+      id="billboard-search"
+      placeholder="Пошук за назвою..."
+      autocomplete="off"
+    />
+  </div>
+
+  <ul class="panel-list" id="billboard-list-items">
+    {billboards.map((b, i) => {
+      const hasFree = b.sides.some(s => s.availability.some(a => a.status === 'Free'));
+      return (
+        <li
+          class="panel-item"
+          data-index={i}
+          data-lng={b.coordinates[0]}
+          data-lat={b.coordinates[1]}
+          data-name={b.description.toLowerCase()}
+        >
+          <div class="item-info">
+            <span class="item-name">{b.description}</span>
+            <span class={`item-badge ${hasFree ? 'badge-free' : 'badge-busy'}`}>
+              {hasFree ? 'Є вільні' : 'Зайнято'}
+            </span>
+          </div>
+          <span class="item-coords">
+            {b.coordinates[1].toFixed(4)}, {b.coordinates[0].toFixed(4)}
+          </span>
+        </li>
+      );
+    })}
+  </ul>
+
+  <div class="panel-empty" id="panel-empty" hidden>
+    Нічого не знайдено
+  </div>
+</aside>
+
+<style>
+  .panel-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: calc(var(--z-panel) - 1);
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-slow), visibility var(--transition-slow);
+    cursor: pointer;
+  }
+
+  .panel-backdrop.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: var(--panel-width);
+    z-index: var(--z-panel);
+    display: flex;
+    flex-direction: column;
+    padding: 4.5rem 0 3.5rem;
+    transform: translateX(-100%);
+    transition: transform var(--transition-slow);
+  }
+
+  .panel-dark {
+    background: rgba(12, 16, 30, 0.88);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .panel.open {
+    transform: translateX(0);
+  }
+
+  .panel-drag-handle {
+    display: none;
+  }
+
+  .panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.25rem 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .panel-header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .panel-title {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .panel-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.6rem;
+    height: 1.6rem;
+    padding: 0 0.4rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: rgba(200, 220, 255, 0.9);
+    background: rgba(100, 170, 255, 0.15);
+    border: 1px solid rgba(100, 170, 255, 0.2);
+    border-radius: var(--radius-full);
+  }
+
+  .panel-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: var(--radius-sm);
+    color: rgba(255, 255, 255, 0.4);
+    transition: background var(--transition-fast), color var(--transition-fast);
+  }
+
+  .panel-close:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+  }
+
+  .panel-search {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .search-icon {
+    position: absolute;
+    left: 1.85rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+  }
+
+  .panel-search input {
+    width: 100%;
+    padding: 0.6rem 0.75rem 0.6rem 2.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    font-size: 0.85rem;
+    font-family: var(--font-body);
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.85);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    outline: none;
+  }
+
+  .panel-search input::placeholder {
+    color: rgba(255, 255, 255, 0.25);
+  }
+
+  .panel-search input:focus {
+    border-color: rgba(100, 170, 255, 0.3);
+    box-shadow: 0 0 0 3px rgba(100, 170, 255, 0.08);
+  }
+
+  .panel-list {
+    list-style: none;
+    overflow-y: auto;
+    flex: 1;
+    padding: 0.5rem 1.25rem;
+  }
+
+  .panel-item {
+    padding: 0.75rem;
+    margin-bottom: 0.4rem;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background var(--transition-fast), transform var(--transition-fast);
+  }
+
+  .panel-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(2px);
+  }
+
+  .panel-item.active {
+    background: rgba(100, 170, 255, 0.1);
+    border-left: 3px solid rgba(100, 170, 255, 0.5);
+  }
+
+  .item-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .item-name {
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .item-badge {
+    flex-shrink: 0;
+    padding: 0.15rem 0.5rem;
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border-radius: var(--radius-full);
+  }
+
+  .badge-free {
+    color: #34d399;
+    background: rgba(16, 185, 129, 0.12);
+  }
+
+  .badge-busy {
+    color: #fb7185;
+    background: rgba(244, 63, 94, 0.12);
+  }
+
+  .item-coords {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.25);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .panel-empty {
+    padding: 2rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
+    .panel {
+      width: 100%;
+      top: auto;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60vh;
+      padding: 0 0 3.5rem;
+      transform: translateY(100%);
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+      border-right: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .panel.open {
+      transform: translateY(0);
+    }
+
+    .panel-drag-handle {
+      display: flex;
+      justify-content: center;
+      padding: 0.6rem 0 0.3rem;
+      cursor: grab;
+    }
+
+    .panel-drag-handle span {
+      width: 36px;
+      height: 4px;
+      border-radius: 2px;
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .panel-header {
+      padding-top: 0.25rem;
+    }
+  }
+</style>
+
+<script>
+  const searchInput = document.getElementById('billboard-search') as HTMLInputElement;
+  const items = document.querySelectorAll<HTMLLIElement>('.panel-item');
+  const emptyMsg = document.getElementById('panel-empty')!;
+
+  searchInput?.addEventListener('input', () => {
+    const query = searchInput.value.toLowerCase().trim();
+    let visible = 0;
+
+    items.forEach((item) => {
+      const name = item.dataset.name || '';
+      const matches = name.includes(query);
+      item.hidden = !matches;
+      if (matches) visible++;
+    });
+
+    emptyMsg.hidden = visible > 0;
+  });
+</script>

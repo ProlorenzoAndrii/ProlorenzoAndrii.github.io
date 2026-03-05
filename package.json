@@ -1,16 +1,13 @@
 {
-  "name": "billboards",
-  "version": "1.0.0",
-  "description": "",
-  "main": "script copy.js",
+  "name": "politorh-iv-billboards",
+  "type": "module",
+  "version": "2.0.0",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "http-server": "^14.1.1",
-    "lightbox2": "^2.11.4"
+    "astro": "^5.5.0"
   }
 }

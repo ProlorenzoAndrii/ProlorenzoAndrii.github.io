@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Header from '../components/Header.astro';
+import MapSection from '../components/MapSection.astro';
+import BillboardPanel from '../components/BillboardPanel.astro';
+import Footer from '../components/Footer.astro';
+import ImageModal from '../components/ImageModal.astro';
+---
+
+<Layout title="Політорг-ІВ — Карта розміщення білбордів">
+  <Hero />
+  <Header />
+  <MapSection />
+  <BillboardPanel />
+  <Footer />
+  <ImageModal />
+
+  <script>
+    import '../scripts/map.ts';
+  </script>
+</Layout>
