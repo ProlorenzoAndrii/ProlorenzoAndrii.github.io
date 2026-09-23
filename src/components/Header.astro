@@ -6,14 +6,14 @@
     <div class="brand">
       <div class="brand-logo" aria-hidden="true">
         <svg width="28" height="28" viewBox="0 0 320 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="148" y="250" width="24" height="130" rx="4" fill="rgba(150,200,255,0.15)" stroke="rgba(150,200,255,0.25)" stroke-width="4"/>
-          <line x1="120" y1="250" x2="148" y2="285" stroke="rgba(150,200,255,0.15)" stroke-width="5"/>
-          <line x1="200" y1="250" x2="172" y2="285" stroke="rgba(150,200,255,0.15)" stroke-width="5"/>
-          <rect x="30" y="40" width="260" height="210" rx="8" fill="rgba(150,200,255,0.06)" stroke="rgba(150,200,255,0.3)" stroke-width="5"/>
-          <rect x="45" y="55" width="230" height="180" rx="4" fill="rgba(100,170,255,0.1)" stroke="rgba(100,170,255,0.15)" stroke-width="3"/>
-          <circle cx="100" cy="38" r="8" fill="rgba(150,200,255,0.7)"/>
-          <circle cx="160" cy="38" r="8" fill="rgba(150,200,255,0.7)"/>
-          <circle cx="220" cy="38" r="8" fill="rgba(150,200,255,0.7)"/>
+          <rect x="148" y="250" width="24" height="130" rx="4" fill="currentColor" fill-opacity="0.15" stroke="currentColor" stroke-opacity="0.3" stroke-width="4"/>
+          <line x1="120" y1="250" x2="148" y2="285" stroke="currentColor" stroke-opacity="0.2" stroke-width="5"/>
+          <line x1="200" y1="250" x2="172" y2="285" stroke="currentColor" stroke-opacity="0.2" stroke-width="5"/>
+          <rect x="30" y="40" width="260" height="210" rx="8" fill="currentColor" fill-opacity="0.06" stroke="currentColor" stroke-opacity="0.4" stroke-width="5"/>
+          <rect x="45" y="55" width="230" height="180" rx="4" fill="currentColor" fill-opacity="0.12" stroke="currentColor" stroke-opacity="0.2" stroke-width="3"/>
+          <circle cx="100" cy="38" r="8" fill="currentColor"/>
+          <circle cx="160" cy="38" r="8" fill="currentColor"/>
+          <circle cx="220" cy="38" r="8" fill="currentColor"/>
         </svg>
       </div>
       <span class="brand-name">Політорг-ІВ</span>
@@ -35,7 +35,7 @@
     right: 0;
     z-index: var(--z-header);
     padding: 0.6rem 1.5rem;
-    background: rgba(10, 14, 26, 0.75);
+    background: rgba(var(--surface-rgb), 0.75);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
@@ -70,9 +70,9 @@
     width: 36px;
     height: 36px;
     border-radius: 10px;
-    background: rgba(100, 170, 255, 0.1);
-    border: 1px solid rgba(100, 170, 255, 0.15);
-    color: rgba(100, 170, 255, 0.8);
+    background: rgba(var(--accent-rgb), 0.1);
+    border: 1px solid rgba(var(--accent-rgb), 0.15);
+    color: rgba(var(--accent-rgb), 0.8);
     flex-shrink: 0;
   }
 
@@ -89,9 +89,9 @@
     align-items: center;
     gap: 0.45rem;
     padding: 0.5rem 1rem;
-    background: rgba(100, 170, 255, 0.12);
-    border: 1px solid rgba(100, 170, 255, 0.2);
-    color: rgba(200, 220, 255, 0.9);
+    background: rgba(var(--accent-rgb), 0.12);
+    border: 1px solid rgba(var(--accent-rgb), 0.2);
+    color: rgba(var(--accent-soft-rgb), 0.9);
     border-radius: var(--radius-full);
     font-weight: 600;
     font-size: 0.82rem;
@@ -100,8 +100,8 @@
   }
 
   .cta-phone:hover {
-    background: rgba(100, 170, 255, 0.2);
-    border-color: rgba(100, 170, 255, 0.35);
+    background: rgba(var(--accent-rgb), 0.2);
+    border-color: rgba(var(--accent-rgb), 0.35);
     color: #fff;
   }
 

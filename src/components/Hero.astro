@@ -1,8 +1,13 @@
 ---
-import billboards from '../data/billboards.json';
+import type { Billboard } from '../lib/billboards';
 
+interface Props {
+  billboards: Billboard[];
+}
+
+const { billboards } = Astro.props;
 const totalBillboards = billboards.length;
-const locations = new Set(billboards.map(b => b.description.split(',')[0].trim())).size;
+const locations = new Set(billboards.map((b) => b.name)).size;
 ---
 
 <section id="hero" class="hero">
@@ -107,7 +112,7 @@ const locations = new Set(billboards.map(b => b.description.split(',')[0].trim()
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(160deg, #0a0a1a 0%, #0f1f3d 40%, #0a0e1a 100%);
+    background: linear-gradient(160deg, var(--bg-deep) 0%, var(--bg-mid) 45%, #040d08 100%);
     overflow: hidden;
     scroll-snap-align: start;
   }
@@ -125,7 +130,7 @@ const locations = new Set(billboards.map(b => b.description.split(',')[0].trim()
     top: var(--y);
     width: var(--size);
     height: var(--size);
-    background: rgba(100, 180, 255, 0.5);
+    background: rgba(var(--accent-rgb), 0.5);
     border-radius: 50%;
     animation: float-particle var(--dur) ease-in-out var(--del) infinite;
   }
@@ -166,6 +171,41 @@ const locations = new Set(billboards.map(b => b.description.split(',')[0].trim()
     width: 100%;
   }
 
+  /* .hero clips with overflow: hidden, which makes it a scroll container, so children track the hero's own named timeline. */
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .hero {
+        view-timeline: --hero-view block;
+      }
+
+      .hero-split {
+        animation: hero-exit linear both;
+        animation-timeline: --hero-view;
+        animation-range: exit 0% exit 70%;
+      }
+
+      .hero-particles {
+        animation: particles-drift linear both;
+        animation-timeline: --hero-view;
+        animation-range: exit 0% exit 100%;
+      }
+    }
+  }
+
+  @keyframes hero-exit {
+    to {
+      opacity: 0;
+      transform: translateY(-14vh) scale(0.86);
+      filter: blur(8px);
+    }
+  }
+
+  @keyframes particles-drift {
+    to {
+      transform: translateY(-30vh);
+    }
+  }
+
   /* --- LEFT: Billboard visual --- */
   .hero-visual {
     flex: 1;
@@ -186,23 +226,23 @@ const locations = new Set(billboards.map(b => b.description.split(',')[0].trim()
   .billboard-svg {
     width: 100%;
     height: 100%;
-    filter: drop-shadow(0 0 40px rgba(80, 140, 255, 0.15));
+    filter: drop-shadow(0 0 40px rgba(var(--accent-rgb), 0.15));
   }
 
   .bb-screen {
-    fill: rgba(15, 30, 60, 0.6);
-    stroke: rgba(100, 170, 255, 0.2);
+    fill: rgba(6, 30, 18, 0.6);
+    stroke: rgba(var(--accent-rgb), 0.2);
     stroke-width: 1;
     animation: screen-pulse 4s ease-in-out infinite;
   }
 
   @keyframes screen-pulse {
-    0%, 100% { fill: rgba(15, 30, 60, 0.6); stroke: rgba(100, 170, 255, 0.2); }
-    50% { fill: rgba(20, 40, 80, 0.7); stroke: rgba(100, 170, 255, 0.35); }
+    0%, 100% { fill: rgba(6, 30, 18, 0.6); stroke: rgba(var(--accent-rgb), 0.2); }
+    50% { fill: rgba(10, 44, 26, 0.7); stroke: rgba(var(--accent-rgb), 0.35); }
   }
 
   .bb-light {
-    fill: rgba(100, 180, 255, 0.8);
+    fill: rgba(var(--accent-rgb), 0.8);
     animation: light-blink 3s ease-in-out infinite;
   }
 
@@ -211,8 +251,8 @@ const locations = new Set(billboards.map(b => b.description.split(',')[0].trim()
   .bb-light-3 { animation-delay: 0.8s; }
 
   @keyframes light-blink {
-    0%, 100% { fill: rgba(100, 180, 255, 0.6); filter: drop-shadow(0 0 4px rgba(100, 180, 255, 0.4)); }
-    50% { fill: rgba(150, 210, 255, 1); filter: drop-shadow(0 0 12px rgba(100, 180, 255, 0.9)); }
+    0%, 100% { fill: rgba(var(--accent-rgb), 0.6); filter: drop-shadow(0 0 4px rgba(var(--accent-rgb), 0.4)); }
+    50% { fill: rgba(var(--accent-soft-rgb), 1); filter: drop-shadow(0 0 12px rgba(var(--accent-rgb), 0.9)); }
   }
 
   .billboard-glow {
@@ -221,7 +261,7 @@ const locations = new Set(billboards.map(b => b.description.split(',')[0].trim()
     left: 10%;
     width: 80%;
     height: 55%;
-    background: radial-gradient(ellipse, rgba(60, 120, 255, 0.12) 0%, transparent 70%);
+    background: radial-gradient(ellipse, rgba(var(--accent-rgb), 0.12) 0%, transparent 70%);
     filter: blur(20px);
     animation: glow-breathe 4s ease-in-out infinite;
     pointer-events: none;
@@ -244,7 +284,7 @@ const locations = new Set(billboards.map(b => b.description.split(',')[0].trim()
     pointer-events: none;
     background: radial-gradient(
       circle 120px at var(--mx, 50%) var(--my, 50%),
-      rgba(150, 200, 255, 0.25) 0%,
+      rgba(var(--accent-soft-rgb), 0.25) 0%,
       transparent 100%
     );
   }
@@ -262,9 +302,9 @@ const locations = new Set(billboards.map(b => b.description.split(',')[0].trim()
     background: conic-gradient(
       from 180deg at 50% 100%,
       transparent 30%,
-      rgba(100, 170, 255, 0.06) 40%,
-      rgba(100, 170, 255, 0.1) 50%,
-      rgba(100, 170, 255, 0.06) 60%,
+      rgba(var(--accent-rgb), 0.06) 40%,
+      rgba(var(--accent-rgb), 0.1) 50%,
+      rgba(var(--accent-rgb), 0.06) 60%,
       transparent 70%
     );
     filter: blur(4px);
@@ -295,7 +335,7 @@ const locations = new Set(billboards.map(b => b.description.split(',')[0].trim()
   }
 
   .hero-title-accent {
-    color: rgba(100, 170, 255, 0.5);
+    color: rgba(var(--accent-rgb), 0.5);
   }
 
   .hero-tagline {
@@ -308,7 +348,7 @@ const locations = new Set(billboards.map(b => b.description.split(',')[0].trim()
   .hero-line {
     width: 60px;
     height: 2px;
-    background: linear-gradient(90deg, rgba(100, 170, 255, 0.6), transparent);
+    background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.6), transparent);
     border-radius: 1px;
   }
 
@@ -353,9 +393,9 @@ const locations = new Set(billboards.map(b => b.description.split(',')[0].trim()
     gap: 0.6rem;
     margin-top: 0.75rem;
     padding: 0.8rem 1.8rem;
-    background: rgba(100, 170, 255, 0.12);
-    border: 1px solid rgba(100, 170, 255, 0.25);
-    color: rgba(200, 220, 255, 0.95);
+    background: rgba(var(--accent-rgb), 0.12);
+    border: 1px solid rgba(var(--accent-rgb), 0.25);
+    color: rgba(var(--accent-soft-rgb), 0.95);
     font-family: var(--font-heading);
     font-weight: 700;
     font-size: 0.9rem;
@@ -370,17 +410,17 @@ const locations = new Set(billboards.map(b => b.description.split(',')[0].trim()
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, transparent 0%, rgba(100, 170, 255, 0.1) 50%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, rgba(var(--accent-rgb), 0.1) 50%, transparent 100%);
     transform: translateX(-100%);
     transition: transform 500ms ease;
   }
 
   .hero-cta:hover {
-    background: rgba(100, 170, 255, 0.2);
-    border-color: rgba(100, 170, 255, 0.45);
+    background: rgba(var(--accent-rgb), 0.2);
+    border-color: rgba(var(--accent-rgb), 0.45);
     color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(60, 120, 255, 0.2);
+    box-shadow: 0 8px 30px rgba(var(--accent-rgb), 0.2);
   }
 
   .hero-cta:hover::before {
@@ -473,7 +513,9 @@ const locations = new Set(billboards.map(b => b.description.split(',')[0].trim()
   const scene = document.getElementById('billboard-scene');
   const shine = document.getElementById('billboard-shine');
 
-  if (scene && shine) {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (scene && shine && !reduceMotion) {
     scene.addEventListener('mousemove', (e) => {
       const rect = scene.getBoundingClientRect();
       const x = ((e.clientX - rect.left) / rect.width) * 100;

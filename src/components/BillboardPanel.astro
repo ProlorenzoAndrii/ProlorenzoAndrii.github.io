@@ -1,5 +1,11 @@
 ---
-import billboards from '../data/billboards.json';
+import type { Billboard } from '../lib/billboards';
+
+interface Props {
+  billboards: Billboard[];
+}
+
+const { billboards } = Astro.props;
 ---
 
 <div id="panel-backdrop" class="panel-backdrop"></div>
@@ -34,25 +40,21 @@ import billboards from '../data/billboards.json';
   </div>
 
   <ul class="panel-list" id="billboard-list-items">
-    {billboards.map((b, i) => {
+    {billboards.map((b) => {
       const hasFree = b.sides.some(s => s.availability.some(a => a.status === 'Free'));
       return (
-        <li
-          class="panel-item"
-          data-index={i}
-          data-lng={b.coordinates[0]}
-          data-lat={b.coordinates[1]}
-          data-name={b.description.toLowerCase()}
-        >
-          <div class="item-info">
-            <span class="item-name">{b.description}</span>
-            <span class={`item-badge ${hasFree ? 'badge-free' : 'badge-busy'}`}>
-              {hasFree ? 'Є вільні' : 'Зайнято'}
+        <li class="panel-row" data-name={b.description.toLowerCase()}>
+          <button type="button" class="panel-item" data-id={b.id}>
+            <span class="item-info">
+              <span class="item-name">{b.name} <span class="item-size">{b.size}</span></span>
+              <span class={`item-badge ${hasFree ? 'badge-free' : 'badge-busy'}`}>
+                {hasFree ? 'Є вільні' : 'Зайнято'}
+              </span>
             </span>
-          </div>
-          <span class="item-coords">
-            {b.coordinates[1].toFixed(4)}, {b.coordinates[0].toFixed(4)}
-          </span>
+            <span class="item-coords">
+              {b.coordinates[1].toFixed(4)}, {b.coordinates[0].toFixed(4)}
+            </span>
+          </button>
         </li>
       );
     })}
@@ -95,7 +97,7 @@ import billboards from '../data/billboards.json';
   }
 
   .panel-dark {
-    background: rgba(12, 16, 30, 0.88);
+    background: rgba(var(--surface-rgb), 0.88);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-right: 1px solid rgba(255, 255, 255, 0.06);
@@ -137,9 +139,9 @@ import billboards from '../data/billboards.json';
     padding: 0 0.4rem;
     font-size: 0.7rem;
     font-weight: 700;
-    color: rgba(200, 220, 255, 0.9);
-    background: rgba(100, 170, 255, 0.15);
-    border: 1px solid rgba(100, 170, 255, 0.2);
+    color: rgba(var(--accent-soft-rgb), 0.9);
+    background: rgba(var(--accent-rgb), 0.15);
+    border: 1px solid rgba(var(--accent-rgb), 0.2);
     border-radius: var(--radius-full);
   }
 
@@ -191,8 +193,8 @@ import billboards from '../data/billboards.json';
   }
 
   .panel-search input:focus {
-    border-color: rgba(100, 170, 255, 0.3);
-    box-shadow: 0 0 0 3px rgba(100, 170, 255, 0.08);
+    border-color: rgba(var(--accent-rgb), 0.3);
+    box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.08);
   }
 
   .panel-list {
@@ -203,11 +205,29 @@ import billboards from '../data/billboards.json';
   }
 
   .panel-item {
+    display: block;
+    width: 100%;
     padding: 0.75rem;
     margin-bottom: 0.4rem;
     border-radius: var(--radius-sm);
+    border-left: 3px solid transparent;
+    text-align: left;
+    color: inherit;
+    font: inherit;
     cursor: pointer;
     transition: background var(--transition-fast), transform var(--transition-fast);
+  }
+
+  .panel-item:focus-visible {
+    outline: 2px solid rgba(var(--accent-rgb), 0.6);
+    outline-offset: 1px;
+  }
+
+  .item-size {
+    margin-left: 0.25rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: rgba(var(--accent-rgb), 0.8);
   }
 
   .panel-item:hover {
@@ -216,8 +236,8 @@ import billboards from '../data/billboards.json';
   }
 
   .panel-item.active {
-    background: rgba(100, 170, 255, 0.1);
-    border-left: 3px solid rgba(100, 170, 255, 0.5);
+    background: rgba(var(--accent-rgb), 0.1);
+    border-left: 3px solid rgba(var(--accent-rgb), 0.5);
   }
 
   .item-info {
@@ -308,17 +328,16 @@ import billboards from '../data/billboards.json';
 
 <script>
   const searchInput = document.getElementById('billboard-search') as HTMLInputElement;
-  const items = document.querySelectorAll<HTMLLIElement>('.panel-item');
+  const rows = document.querySelectorAll<HTMLLIElement>('.panel-row');
   const emptyMsg = document.getElementById('panel-empty')!;
 
   searchInput?.addEventListener('input', () => {
     const query = searchInput.value.toLowerCase().trim();
     let visible = 0;
 
-    items.forEach((item) => {
-      const name = item.dataset.name || '';
-      const matches = name.includes(query);
-      item.hidden = !matches;
+    rows.forEach((row) => {
+      const matches = (row.dataset.name || '').includes(query);
+      row.hidden = !matches;
       if (matches) visible++;
     });
 

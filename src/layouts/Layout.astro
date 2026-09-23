@@ -1,9 +1,50 @@
 ---
+import '@fontsource/inter/cyrillic-400.css';
+import '@fontsource/inter/latin-400.css';
+import '@fontsource/inter/cyrillic-500.css';
+import '@fontsource/inter/latin-500.css';
+import '@fontsource/inter/cyrillic-600.css';
+import '@fontsource/inter/latin-600.css';
+import '@fontsource/montserrat/cyrillic-600.css';
+import '@fontsource/montserrat/latin-600.css';
+import '@fontsource/montserrat/cyrillic-700.css';
+import '@fontsource/montserrat/latin-700.css';
+import '@fontsource/montserrat/cyrillic-800.css';
+import '@fontsource/montserrat/latin-800.css';
+import '../styles/global.css';
+
 interface Props {
   title: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const {
+  title,
+  description = 'Політорг-ІВ — зовнішня реклама на Прикарпатті. Інтерактивна карта білбордів 3×6 та 12×5 в Івано-Франківській області з фото та доступністю по місяцях.',
+} = Astro.props;
+
+const site = Astro.site ?? new URL('https://prolorenzoandrii.github.io');
+const canonical = new URL(Astro.url.pathname, site).href;
+const ogImage = new URL('/og-image.png', site).href;
+
+const businessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Політорг-ІВ',
+  description: 'Зовнішня реклама: оренда білбордів 3×6 та 12×5 на Прикарпатті.',
+  url: site.href,
+  image: ogImage,
+  telephone: '+380951327415',
+  areaServed: {
+    '@type': 'AdministrativeArea',
+    name: 'Івано-Франківська область',
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressRegion: 'Івано-Франківська область',
+    addressCountry: 'UA',
+  },
+};
 ---
 
 <!doctype html>
@@ -11,26 +52,33 @@ const { title } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Політорг-ІВ — зовнішня реклама на Прикарпатті. Карта розміщення білбордів в Івано-Франківській області." />
-    <link rel="icon" type="image/svg+xml" href="/billboard.svg" />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#06140d" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
 
-    <link
-      href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css"
-      rel="stylesheet"
-    />
-    <script is:inline src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="uk_UA" />
+    <meta property="og:site_name" content="Політорг-ІВ" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
 
-    <style is:global>
-      @import '../styles/global.css';
-    </style>
+    <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
+
+    <link rel="preconnect" href="https://api.mapbox.com" crossorigin />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.31.0/mapbox-gl.css" rel="stylesheet" />
+    <script is:inline src="https://api.mapbox.com/mapbox-gl-js/v3.31.0/mapbox-gl.js"></script>
   </head>
   <body>
     <slot />

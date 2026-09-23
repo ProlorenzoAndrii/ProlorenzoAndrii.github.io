@@ -51,6 +51,11 @@
     transform: scale(1);
   }
 
+  .modal--instant,
+  .modal--instant .modal-content {
+    transition: none;
+  }
+
   .modal-content img {
     max-width: 90vw;
     max-height: 85vh;
@@ -75,33 +80,93 @@
 </style>
 
 <script>
+  import { withViewTransition } from '../scripts/view-transition';
+
+  interface OpenImageDetail {
+    src: string;
+    alt: string;
+    preview?: string;
+    origin?: HTMLImageElement | null;
+  }
+
   function initModal() {
     const modal = document.getElementById('image-modal')!;
     const modalImage = document.getElementById('modal-image') as HTMLImageElement;
     const backdrop = modal.querySelector('.modal-backdrop')!;
-    const closeBtn = modal.querySelector('.modal-close')!;
+    const closeBtn = modal.querySelector<HTMLButtonElement>('.modal-close')!;
 
-    function openModal(src: string, alt: string) {
+    let origin: HTMLImageElement | null = null;
+
+    const isOpen = () => modal.getAttribute('aria-hidden') === 'false';
+
+    function show(src: string, alt: string) {
       modalImage.src = src;
       modalImage.alt = alt;
       modal.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
     }
 
-    function closeModal() {
+    function hide() {
       modal.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
     }
 
-    backdrop.addEventListener('click', closeModal);
-    closeBtn.addEventListener('click', closeModal);
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') {
-        closeModal();
+    // The morph needs both ends painted at once, so the modal's own fade is switched off meanwhile.
+    function morph(update: () => void, from: HTMLElement | null, to: HTMLElement | null) {
+      if (from) from.style.viewTransitionName = 'bb-photo';
+      modal.classList.add('modal--instant');
+      return withViewTransition(() => {
+        if (from) from.style.viewTransitionName = '';
+        update();
+        if (to) to.style.viewTransitionName = 'bb-photo';
+      }, ['photo-zoom']).then(() => {
+        if (to) to.style.viewTransitionName = '';
+        modal.classList.remove('modal--instant');
+      });
+    }
+
+    function open({ src, alt, preview, origin: from }: OpenImageDetail) {
+      origin = from?.isConnected ? from : null;
+      if (!origin || !preview) {
+        show(src, alt);
+        closeBtn.focus();
+        return;
       }
+
+      const full = new Image();
+      full.src = src;
+
+      morph(() => show(preview, alt), origin, modalImage).then(() => {
+        full.decode().then(
+          () => {
+            if (isOpen()) modalImage.src = src;
+          },
+          () => {},
+        );
+        closeBtn.focus();
+      });
+    }
+
+    function close() {
+      if (!isOpen()) return;
+      const target = origin?.isConnected ? origin : null;
+      origin = null;
+      if (!target) {
+        hide();
+        return;
+      }
+      morph(hide, modalImage, target).then(() => {
+        target.closest<HTMLElement>('button')?.focus({ preventScroll: true });
+      });
+    }
+
+    backdrop.addEventListener('click', close);
+    closeBtn.addEventListener('click', close);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') close();
     });
 
-    (window as any).__openImageModal = openModal;
+    window.addEventListener('open-image', (e) => open((e as CustomEvent<OpenImageDetail>).detail));
   }
 
   initModal();
