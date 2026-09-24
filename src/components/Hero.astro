@@ -113,8 +113,9 @@ const locations = new Set(billboards.map((b) => b.name)).size;
     align-items: center;
     justify-content: center;
     background: linear-gradient(160deg, var(--bg-deep) 0%, var(--bg-mid) 45%, #040d08 100%);
-    overflow: hidden;
+    overflow: clip;
     scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
 
   /* --- Floating particles --- */
@@ -171,7 +172,6 @@ const locations = new Set(billboards.map((b) => b.name)).size;
     width: 100%;
   }
 
-  /* .hero clips with overflow: hidden, which makes it a scroll container, so children track the hero's own named timeline. */
   @supports (animation-timeline: view()) {
     @media (prefers-reduced-motion: no-preference) {
       .hero {
@@ -181,7 +181,7 @@ const locations = new Set(billboards.map((b) => b.name)).size;
       .hero-split {
         animation: hero-exit linear both;
         animation-timeline: --hero-view;
-        animation-range: exit 0% exit 70%;
+        animation-range: exit 0% exit 80%;
       }
 
       .hero-particles {
@@ -195,8 +195,7 @@ const locations = new Set(billboards.map((b) => b.name)).size;
   @keyframes hero-exit {
     to {
       opacity: 0;
-      transform: translateY(-14vh) scale(0.86);
-      filter: blur(8px);
+      transform: translateY(-8vh);
     }
   }
 

@@ -26,6 +26,7 @@
     height: 100vh;
     z-index: var(--z-map);
     scroll-snap-align: start;
+    scroll-snap-stop: always;
     background: var(--bg-deep);
   }
 
@@ -36,14 +37,11 @@
 
   @supports (animation-timeline: view()) {
     @media (prefers-reduced-motion: no-preference) {
-      /* clip-path (not transform) so Mapbox's pointer maths and marker positions stay exact. */
       .map-wrapper {
         view-timeline: --map-view block;
-        animation: map-reveal linear both;
-        animation-timeline: --map-view;
-        animation-range: entry 0% entry 100%;
       }
 
+      /* Veil only. Clipping or scaling the map canvas makes the WebGL frame flash. */
       .map-wrapper::before {
         content: '';
         position: absolute;
@@ -53,23 +51,14 @@
         pointer-events: none;
         animation: map-veil linear both;
         animation-timeline: --map-view;
-        animation-range: entry 15% entry 95%;
+        animation-range: entry 0% entry 70%;
       }
-    }
-  }
-
-  @keyframes map-reveal {
-    from {
-      clip-path: inset(14% 7% 0 7% round 40px);
-    }
-    to {
-      clip-path: inset(0 0 0 0 round 0);
     }
   }
 
   @keyframes map-veil {
     from {
-      opacity: 0.9;
+      opacity: 1;
     }
     to {
       opacity: 0;
